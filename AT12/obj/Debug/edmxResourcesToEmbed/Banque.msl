@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="banqueModelStoreContainer" CdmEntityContainer="banqueEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="banqueModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Num_client" ColumnName="Num_client" />
+          <ScalarProperty Name="Nom_client" ColumnName="Nom_client" />
+          <ScalarProperty Name="Prenom_Client" ColumnName="Prenom_Client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comptes">
+      <EntityTypeMapping TypeName="banqueModel.Compte">
+        <MappingFragment StoreEntitySet="Compte">
+          <ScalarProperty Name="Num_Compte" ColumnName="Num_Compte" />
+          <ScalarProperty Name="Num_Client" ColumnName="Num_Client" />
+          <ScalarProperty Name="Solde" ColumnName="Solde" />
+          <ScalarProperty Name="TypeC" ColumnName="TypeC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mouvements">
+      <EntityTypeMapping TypeName="banqueModel.Mouvement">
+        <MappingFragment StoreEntitySet="Mouvement">
+          <ScalarProperty Name="Num_Mouvement" ColumnName="Num_Mouvement" />
+          <ScalarProperty Name="Num_Compte" ColumnName="Num_Compte" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="TypeM" ColumnName="TypeM" />
+          <ScalarProperty Name="DateM" ColumnName="DateM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Virements">
+      <EntityTypeMapping TypeName="banqueModel.Virement">
+        <MappingFragment StoreEntitySet="Virement">
+          <ScalarProperty Name="Num_Virement" ColumnName="Num_Virement" />
+          <ScalarProperty Name="Num_Debiteur" ColumnName="Num_Debiteur" />
+          <ScalarProperty Name="Num_Crediteur" ColumnName="Num_Crediteur" />
+          <ScalarProperty Name="Montant_Vr" ColumnName="Montant_Vr" />
+          <ScalarProperty Name="Date_Vr" ColumnName="Date_Vr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ps_Depot" FunctionName="banqueModel.Store.ps_Depot" />
+    <FunctionImportMapping FunctionImportName="ps_Retrait" FunctionName="banqueModel.Store.ps_Retrait" />
+    <FunctionImportMapping FunctionImportName="ps_Virement" FunctionName="banqueModel.Store.ps_Virement" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="banqueModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="banqueModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="banqueModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="banqueModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="banqueModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="banqueModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="banqueModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="banqueModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="banqueModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
